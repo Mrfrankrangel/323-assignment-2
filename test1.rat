@@ -1,0 +1,3 @@
+// demo program
+a = b + c;
+x = (y - 3) * z;

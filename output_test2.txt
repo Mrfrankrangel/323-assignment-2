@@ -1,0 +1,45 @@
+     <Program> -> <Statements>
+     <Statements> -> <Statement> <Statements>
+     <Statement> -> <Assign> ;
+     <Assign> -> <Identifier> = <Expression>
+Token: Identifier   Lexeme: result
+Token: Operator     Lexeme: =
+     <Expression> -> <Term> <Expression Prime>
+     <Term> -> <Factor> <Term Prime>
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Separator    Lexeme: (
+     <Expression> -> <Term> <Expression Prime>
+     <Term> -> <Factor> <Term Prime>
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Identifier   Lexeme: a
+     <Term Prime> -> * <Factor> <Term Prime> | / <Factor> <Term Prime> | ε
+     <Expression Prime> -> + <Term> <Expression Prime> | - <Term> <Expression Prime> | ε
+Token: Operator     Lexeme: +
+     <Term> -> <Factor> <Term Prime>
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Identifier   Lexeme: b
+     <Term Prime> -> * <Factor> <Term Prime> | / <Factor> <Term Prime> | ε
+Token: Separator    Lexeme: )
+     <Term Prime> -> * <Factor> <Term Prime> | / <Factor> <Term Prime> | ε
+Token: Operator     Lexeme: *
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Separator    Lexeme: (
+     <Expression> -> <Term> <Expression Prime>
+     <Term> -> <Factor> <Term Prime>
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Identifier   Lexeme: c
+     <Term Prime> -> * <Factor> <Term Prime> | / <Factor> <Term Prime> | ε
+     <Expression Prime> -> + <Term> <Expression Prime> | - <Term> <Expression Prime> | ε
+Token: Operator     Lexeme: -
+     <Term> -> <Factor> <Term Prime>
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Identifier   Lexeme: d
+     <Term Prime> -> * <Factor> <Term Prime> | / <Factor> <Term Prime> | ε
+Token: Separator    Lexeme: )
+Token: Operator     Lexeme: /
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Identifier   Lexeme: e
+     <Expression Prime> -> + <Term> <Expression Prime> | - <Term> <Expression Prime> | ε
+Token: Separator    Lexeme: ;
+     <Statements> -> ε
+Parsing complete: input is syntactically correct.

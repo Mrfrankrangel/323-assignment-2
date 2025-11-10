@@ -1,0 +1,55 @@
+     <Program> -> <Statements>
+     <Statements> -> <Statement> <Statements>
+     <Statement> -> <Assign> ;
+     <Assign> -> <Identifier> = <Expression>
+Token: Identifier   Lexeme: num
+Token: Operator     Lexeme: =
+     <Expression> -> <Term> <Expression Prime>
+     <Term> -> <Factor> <Term Prime>
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Number       Lexeme: 5
+     <Term Prime> -> * <Factor> <Term Prime> | / <Factor> <Term Prime> | ε
+     <Expression Prime> -> + <Term> <Expression Prime> | - <Term> <Expression Prime> | ε
+Token: Operator     Lexeme: +
+     <Term> -> <Factor> <Term Prime>
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Number       Lexeme: 3
+     <Term Prime> -> * <Factor> <Term Prime> | / <Factor> <Term Prime> | ε
+Token: Operator     Lexeme: *
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Separator    Lexeme: (
+     <Expression> -> <Term> <Expression Prime>
+     <Term> -> <Factor> <Term Prime>
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Identifier   Lexeme: x
+     <Term Prime> -> * <Factor> <Term Prime> | / <Factor> <Term Prime> | ε
+     <Expression Prime> -> + <Term> <Expression Prime> | - <Term> <Expression Prime> | ε
+Token: Operator     Lexeme: -
+     <Term> -> <Factor> <Term Prime>
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Number       Lexeme: 2
+     <Term Prime> -> * <Factor> <Term Prime> | / <Factor> <Term Prime> | ε
+Token: Separator    Lexeme: )
+Token: Separator    Lexeme: ;
+     <Statements> -> <Statement> <Statements>
+     <Statement> -> <Assign> ;
+     <Assign> -> <Identifier> = <Expression>
+Token: Identifier   Lexeme: total
+Token: Operator     Lexeme: =
+     <Expression> -> <Term> <Expression Prime>
+     <Term> -> <Factor> <Term Prime>
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Identifier   Lexeme: num
+     <Term Prime> -> * <Factor> <Term Prime> | / <Factor> <Term Prime> | ε
+Token: Operator     Lexeme: /
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Number       Lexeme: 4
+     <Expression Prime> -> + <Term> <Expression Prime> | - <Term> <Expression Prime> | ε
+Token: Operator     Lexeme: +
+     <Term> -> <Factor> <Term Prime>
+     <Factor> -> <Identifier> | <Number> | ( <Expression> )
+Token: Number       Lexeme: 7
+     <Term Prime> -> * <Factor> <Term Prime> | / <Factor> <Term Prime> | ε
+Token: Separator    Lexeme: ;
+     <Statements> -> ε
+Parsing complete: input is syntactically correct.

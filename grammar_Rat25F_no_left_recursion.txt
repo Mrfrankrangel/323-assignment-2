@@ -1,0 +1,11 @@
+# Rat25F (subset) — Left recursion removed and left factored
+
+<Program>         -> <Statements>
+<Statements>      -> <Statement> <Statements> | ε
+<Statement>       -> <Assign> ;
+<Assign>          -> <Identifier> = <Expression>
+<Expression>      -> <Term> <ExpressionPrime>
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<Term>            -> <Factor> <TermPrime>
+<TermPrime>       -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<Factor>          -> <Identifier> | <Number> | ( <Expression> )

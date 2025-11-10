@@ -1,0 +1,2 @@
+// arithmetic with parentheses and multiple operations
+result = (a + b) * (c - d) / e;

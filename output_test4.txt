@@ -1,0 +1,3 @@
+     <Program> -> <Statements>
+     <Statements> -> ε
+Parsing complete: input is syntactically correct.
